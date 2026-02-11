@@ -1,5 +1,5 @@
-resource "azurerm_synapse_workspace_extended_auditing_policy" "synapse_workspace_extended_auditing_policys" {
-  for_each = var.synapse_workspace_extended_auditing_policys
+resource "azurerm_synapse_workspace_extended_auditing_policy" "synapse_workspace_extended_auditing_policies" {
+  for_each = var.synapse_workspace_extended_auditing_policies
 
   synapse_workspace_id                    = each.value.synapse_workspace_id
   log_monitoring_enabled                  = each.value.log_monitoring_enabled

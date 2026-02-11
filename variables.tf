@@ -1,6 +1,6 @@
-variable "synapse_workspace_extended_auditing_policys" {
+variable "synapse_workspace_extended_auditing_policies" {
   description = <<EOT
-Map of synapse_workspace_extended_auditing_policys, attributes below
+Map of synapse_workspace_extended_auditing_policies, attributes below
 Required:
     - synapse_workspace_id
 Optional:
@@ -13,10 +13,10 @@ EOT
 
   type = map(object({
     synapse_workspace_id                    = string
-    log_monitoring_enabled                  = optional(bool, true)
-    retention_in_days                       = optional(number, 0)
+    log_monitoring_enabled                  = optional(bool)   # Default: true
+    retention_in_days                       = optional(number) # Default: 0
     storage_account_access_key              = optional(string)
-    storage_account_access_key_is_secondary = optional(bool, false)
+    storage_account_access_key_is_secondary = optional(bool) # Default: false
     storage_endpoint                        = optional(string)
   }))
 }
