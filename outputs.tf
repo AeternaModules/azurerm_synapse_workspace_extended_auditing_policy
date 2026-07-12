@@ -1,3 +1,7 @@
+output "synapse_workspace_extended_auditing_policies_id" {
+  description = "Map of id values across all synapse_workspace_extended_auditing_policies, keyed the same as var.synapse_workspace_extended_auditing_policies"
+  value       = { for k, v in azurerm_synapse_workspace_extended_auditing_policy.synapse_workspace_extended_auditing_policies : k => v.id }
+}
 output "synapse_workspace_extended_auditing_policies_log_monitoring_enabled" {
   description = "Map of log_monitoring_enabled values across all synapse_workspace_extended_auditing_policies, keyed the same as var.synapse_workspace_extended_auditing_policies"
   value       = { for k, v in azurerm_synapse_workspace_extended_auditing_policy.synapse_workspace_extended_auditing_policies : k => v.log_monitoring_enabled }
